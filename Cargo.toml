@@ -1,0 +1,19 @@
+[workspace]
+resolver = "2"
+members = ["crates/spikeloop-core", "crates/spikeloop-py"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+authors = ["Arihanth Mutha"]
+repository = "https://github.com/Arihanth-Mutha/spikeloop"
+rust-version = "1.75"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+
+[profile.bench]
+lto = "thin"
+codegen-units = 1
