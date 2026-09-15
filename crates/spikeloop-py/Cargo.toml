@@ -1,0 +1,22 @@
+[package]
+name = "spikeloop-py"
+description = "Python bindings for spikeloop-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+publish = false
+
+[lib]
+name = "_core"
+crate-type = ["cdylib"]
+
+[dependencies]
+spikeloop-core = { path = "../spikeloop-core" }
+pyo3 = { version = "0.23", features = ["abi3-py39"] }
+numpy = "0.23"
+
+[features]
+extension-module = ["pyo3/extension-module"]
+default = ["extension-module"]
